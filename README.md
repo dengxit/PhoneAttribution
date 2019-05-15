@@ -1,6 +1,6 @@
 ## 本课程来源于慕课
 -----------
-[课程地址](http://blog.csdn.net/guodongxiaren "课程地址")
+[课程地址](https://www.imooc.com/learn/604 "课程地址")
 
 -----------
 
