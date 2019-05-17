@@ -2,18 +2,37 @@
 
 namespace app;
 use libs\HttpRequest;
+use libs\DbConfig;
 
 class MobileQuery{
 	const TAOBAO_API = 'https://tcc.taobao.com/cc/json/mobile_tel_segment.htm';
+	const CACHE_KEY = 'PHONE:INFO';
 	
 	public static function queryPhone($phone){
+//		var_dump($phone_prefix);
 //		var_dump(self::verifyPhone($phone));
 		if(self::verifyPhone($phone)){
-			$response = HttpRequest::request(self::TAOBAO_API,['tel' =>$phone]);
-//			$res = json_decode($response, true);
-//			var_dump($response);
-			if(self::fomatData($response)){
-				var_dump(self::fomatData($response));
+			$phone_prefix = substr($phone,0,7);
+			$db = DbConfig::getIntance();
+			$sql = "SELECT * FROM phonerecord where mts =  $phone_prefix";
+			$result = $db->query($sql);
+			$num_rows = mysqli_num_rows($result);
+			var_dump($num_rows);
+			if($num_rows >0){
+				echo "数据库";
+			}else{
+						$response = HttpRequest::request(self::TAOBAO_API,['tel' =>$phone]);
+	//			$res = json_decode($response, true);
+	//			var_dump($response);
+				$data = self::fomatData($response);
+				if($data){
+	//				var_dump($data);
+	//				$json = json_decode($data);
+//					$db = DbConfig::getIntance();
+					$res = $db->insert('phonerecord',$data);
+					echo "API";
+//					var_dump($data);
+				}
 			}
 		}
 	}
