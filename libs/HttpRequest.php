@@ -16,13 +16,10 @@ class HttpRequest{
 					}else{
 						$url = $url . '?' . http_build_query($para);
 					}
-//					var_dump($url);
-//					$response = file_get_contents($url);
 					$response = iconv("GBK", "UTF-8//IGNORE", file_get_contents($url));
 				}
 			}
 		}
-//		var_dump($response);
 		return $response;
 	}
 }
