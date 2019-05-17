@@ -9,7 +9,6 @@ class autoload {
     public static function load($fileName)
     {
         $filePath = sprintf('%s.php', str_replace('\\', '/', $fileName));
-//		var_dump($filePath);
         if (is_file($filePath)) require_once $filePath;
     }
 
