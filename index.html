@@ -54,7 +54,7 @@
     $(document).ready(function(){
         $('#subPhone').click(function(){
             var phone = $('#phoneText').val();
-            IMOOC.GLOBAL.AJAX('api.php', 'post', {'tel': phone}, 'json', IMOOC.APPS.QUERYPHONE.AJAXCALLBACK);
+            CODE.GLOBAL.AJAX('api.php', 'post', {'tel': phone}, 'json', CODE.APPS.QUERYPHONE.AJAXCALLBACK);
         });
     });
 </script>
