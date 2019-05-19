@@ -1,11 +1,3 @@
-/**
- * @description JS基础库<依赖jQuery>
- *
- * @author Jason <shuaijinchao@gmail.com>
- *
- * @create 2015-11-29 16:21
- */
-
 var IMOOC = IMOOC || {};
 IMOOC.GLOBAL = {};
 IMOOC.APPS = {};
@@ -17,28 +9,30 @@ IMOOC.APPS.QUERYPHONE.showInfo = function(){
 IMOOC.APPS.QUERYPHONE.hideInfo = function(){
     $('#phoneInfo').hide();
 };
-IMOOC.APPS.QUERYPHONE.dataCallback = function(data) {
+IMOOC.APPS.QUERYPHONE.AJAXCALLBACK = function(data) {
     if (data.code == 200) {
+        alert(data.catName);
         IMOOC.APPS.QUERYPHONE.showInfo();
-        $('#phoneNumber').text(data.phone);
+        $('#phoneNumber').text(data.telString);
         $('#phoneProvince').text(data.province);
         $('#phoneCatName').text(data.catName);
-        $('#phoneMsg').text(data.msg);
+        $('#phoneCarrier').text(data.carrier);
+        $('#phoneFrom').text(data.msg);
     } else {
         IMOOC.APPS.QUERYPHONE.hideInfo();
         alert(data.msg);
     }
 };
 
-IMOOC.GLOBAL.ajax = function(url, method, params, dataType, callback){
+IMOOC.GLOBAL.AJAX = function(url, method, params, dataType, callback){
     $.ajax({
         url: url,
         type: method,
         data: params,
         dataType: dataType,
         success: callback,
-        error:function(){
-            alert('请求异常');
-        }
+		error: function(){
+			alert('请求异常');
+		}
     });
 };
