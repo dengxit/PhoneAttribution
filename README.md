@@ -34,46 +34,55 @@ str_replace(find,replace,string,count)
 | find | 必要。规定要在string中查找的值 |
 | replace | 必要。将查找到的值替换为replace中的值 |
 | string | 必要。原字符串 |
-| count | 非必要。对替换的字符串进行计数 
-*  json_encode
+| count | 非必要。对替换的字符串进行计数 |
+*  json_encode：对变量进行 JSON 编码
+   [点击查看](https://php.net/manual/zh/function.json-encode.php)
+*  substr：返回字符串的一部分
 ```
-// todo
+substr(string,start,length)
 ```
-*  substr
-```
-// todo
-```
-*  preg_match
-```
-// todo
-```
+| 参数 | 描述 |
+| --- | --- |
+| string | 必要。原字符串 |
+| start | 必要。起始位置 |
+| length | 非必要。返回的长度，默认是到字符串结束 |
+*  preg_match：执行一个正则表达式的匹配
+   [点击查看](https://www.runoob.com/php/php-preg_match.html)
 *  preg_match_all
 ```
-// todo
+preg_match() 第一次匹配成功后就会停止匹配，如果要实现全部匹配，则需使用 preg_match_all() 函数,返回整个模式匹配的次数（可能为零）
 ```
-*  array_combine
+*  array_combine:创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值
 ```
-// todo
+array_combine ( array $keys , array $values ) : array
+返回一个 array，用来自 keys 数组的值作为键名，来自 values 数组的值作为相应的值。
 ```
-*  strtoupper
+*  strtoupper:把所有字符转换为大写
 ```
-// todo
+相关函数：
+lcfirst() - 把字符串中的首字符转换为小写
+strtolower() - 把字符串转换为小写
+ucfirst() - 把字符串中的首字符转换为大写
+ucwords() - 把字符串中每个单词的首字符转换为大写
 ```
-*  strrpos
+*  strrpos：strrpos(string,find,start)查找字符串在另一字符串中最后一次出现的位置
 ```
-// todo
+相关函数：
+stripos() - 查找字符串在另一字符串中第一次出现的位置（不区分大小写）
+strpos() - 查找字符串在另一字符串中第一次出现的位置（区分大小写）
+strripos() - 查找字符串在另一字符串中最后一次出现的位置（不区分大小写）
 ```
-*  iconv
+*  iconv：iconv ( string $in_charset , string $out_charset , string $str ) : string
 ```
-// todo
+执行对字符串的字符集转换 ，str从in_charset 转换到out_charset。
 ```
-*  http_build_query
-```
-// todo
-```
+*  http_build_query：拼接生成URL参数字符串
+   [点击查看](http://www.hangge.com/blog/cache/detail_1367.html)
 *  file_get_contents
 ```
-// todo
+把整个文件读入一个字符串中
+例如file_get_contents("test.txt")
+得到的是一个包含了test.txt中所有内容的字符串
 ```
 
 
