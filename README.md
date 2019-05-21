@@ -25,18 +25,16 @@
         
  #####  课程中调用的函数总结
 
-*  str_replace
+*  str_replace：：对于给定字符串中的部分字符串进行替换
 ```
 str_replace(find,replace,string,count)
-
-
+```
 | 参数 | 描述 |
 | --- | --- |
 | find | 必要。规定要在string中查找的值 |
 | replace | 必要。将查找到的值替换为replace中的值 |
 | string | 必要。原字符串 |
-| count | 非必要。对替换的字符串进行计数|
-```
+| count | 非必要。对替换的字符串进行计数 
 *  json_encode
 ```
 // todo
