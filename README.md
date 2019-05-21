@@ -50,7 +50,8 @@ substr(string,start,length)
    [点击查看](https://www.runoob.com/php/php-preg_match.html)
 *  preg_match_all
 ```
-preg_match() 第一次匹配成功后就会停止匹配，如果要实现全部匹配，则需使用 preg_match_all() 函数,返回整个模式匹配的次数（可能为零）
+preg_match() 第一次匹配成功后就会停止匹配
+如果要实现全部匹配，则需使用 preg_match_all() 函数,返回整个模式匹配的次数（可能为零）
 ```
 *  array_combine:创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值
 ```
